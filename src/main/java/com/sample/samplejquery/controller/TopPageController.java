@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TopPageController {
-    @RequestMapping(value = "/")
-    public String index() {
-        return "top";
-    }
+
+  @RequestMapping(value = "/")
+  public String index() {
+    return "top";
+  }
 }
