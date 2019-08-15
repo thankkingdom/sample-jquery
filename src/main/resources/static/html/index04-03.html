@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      //document.getElementById("msg").innerHTML = "クリックしました。";
+      $("#msg").text("クリックしました！");
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="msg">ボタンをクリックしてください。</p>
+  <br><br>
+  <input type="button" onclick="doAction()" value="クリック">
+</body>
+</html>

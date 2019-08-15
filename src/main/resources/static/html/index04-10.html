@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      var val;
+      //if($("input@radio:checked")){
+      if($("input[name=radio]:checked")){
+        //val = $("input@radio:checked").val();
+        val = $("input[name=radio]:checked").val();
+      }
+      if(val != undefined){
+        $("#msg").text(val + "を選択しました。");
+      } else {
+        $("#msg").text("未選択です。");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="msg">ボタンをクリックしてください。</p>
+  <input type="radio" name="radio" id="r1" value="Windows"><label for="r1">Windows</label><br>
+  <input type="radio" name="radio" id="r2" value="Mac OS X"><label for="r2">Mac OS X</label><br>
+  <input type="radio" name="radio" id="r3" value="Linux"><label for="r3">Linux</label><br>
+  <input type="button" onclick="doAction()" value="クリック">
+</body>
+</html>

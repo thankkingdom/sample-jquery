@@ -17,9 +17,11 @@
       var obj = document.createElement("div");
       obj.style.background = "#ffaa00";
       obj.innerHTML = "No." + count++;
+      // addEventListener: Firefox, Chrome, etc
       if(obj.addEventListener != undefined){
         obj.addEventListener("click", click, false);
       } else {
+        // attachEvent: IE
         if(obj.attachEvent){
           obj.attachEvent("onclick", click);
         }
@@ -30,8 +32,10 @@
     function click(event){
       var obj = null;
       if(event.target != undefined){
+        // Firefox, Chrome
         obj = event.target;
       } else {
+        // IE
         obj = event.srcElement;
       }
       obj.style.background = "red";

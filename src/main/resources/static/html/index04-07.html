@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      var res = "あなたは、" + $("#input").val() + "と書きました。";
+      $("#msg").text(res);
+    }
+    function doAction2(){
+      $("#msg").text("ボタンをクリックしてください。");
+      if($("#c1").prop("checked")){
+        var res = $("#c1").attr("id") + "を選択しました。";
+        $("#msg").text(res);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="msg">ボタンをクリックしてください。</p>
+  <input type="text" id="input">
+  <input type="button" onclick="doAction()" value="クリック">
+  <br><hr>
+  <input type="checkbox" id="c1"><label for="c1">チェックボックス</label><br>
+  <input type="button" onclick="doAction2()" value="クリック">
+</body>
+</html>
