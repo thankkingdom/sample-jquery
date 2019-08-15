@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <style type="text/css">
+    #content {
+      position: absolute;
+      background: #ff6600;
+      width: 200px;
+      height: 50px;
+    }
+  </style>
+  <script type="text/javascript">
+    var count = 0;
+    function doAction(event){
+      var obj = document.createElement("div");
+      obj.style.background = "#ffaa00";
+      obj.innerHTML = "No." + count++;
+      if(obj.addEventListener != undefined){
+        obj.addEventListener("click", click, false);
+      } else {
+        if(obj.attachEvent){
+          obj.attachEvent("onclick", click);
+        }
+      }
+      document.body.appendChild(obj);
+    }
+
+    function click(event){
+      var obj = null;
+      if(event.target != undefined){
+        obj = event.target;
+      } else {
+        obj = event.srcElement;
+      }
+      obj.style.background = "red";
+      obj.innerHTML = "クリックしました。";
+    }
+    function doClear(event){
+      count = 0;
+      var divs = document.getElementsByTagName("div");
+      var size = divs.length;
+      for(i=0;i<size;i++){
+        // 削除で要素が減るので最初になった要素を削除すれば良い
+        console.log(divs[0]);
+        divs[0].parentNode.removeChild(divs[0]);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <br><br>
+  <input type="button" onclick="doAction();" value="クリック">
+  <input type="button" onclick="doClear();" value="クリア">
+</body>
+</html>

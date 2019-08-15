@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <style type="text/css">
+    #content {
+      position:absolute;
+      background: #FF6600;
+      with: 200px;
+      height: 50px;
+    }
+  </style>
+  <script type="text/javascript">
+    var mouseflg = false;
+    var pointerflg = false;
+
+    function doAction(event){
+      var content = document.getElementById("content");
+      if(pointerflg){
+        content.style.background = "#ff0000";
+        console.log(mouseflg);
+        if(mouseflg){
+          content.style.left = (event.clientX - 100) + "px";
+          content.style.top = (event.clientY - 25) + "px";
+          console.log("left: " + content.style.left);
+          console.log("top:" + content.style.top);
+        }
+      } else {
+        content.style.background = "#ff6600";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="content"
+     onmouseover="pointerflg = true;"
+     onmouseout="pointerflg = false; doAction(event);"
+     onmousedown="mouseflg = true;"
+     onmouseup="mouseflg = false;"
+     onmousemove="doAction(event);">サンプルのタグです。</p>
+  <br><br>
+</body>
+</html>

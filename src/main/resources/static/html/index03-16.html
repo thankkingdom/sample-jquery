@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>リスト3-16</title>
+  <script type="text/javascript">
+    function doAction() {
+      var input = document.getElementById("input");
+      var val = input.value;
+      var content = document.getElementById("content");
+      content.style.left = val + "px";
+      content.style.top = val + "px";
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="content" style="position:absolute; background: #ff6600; width:200px; height:20px">
+    サンプルのタグです。
+  </p>
+  <br><br>
+  <input type="text" id="input" placeholder="pixel for top and left">
+  <input type="button" value="実行" onclick="doAction();">
+</body>
+</html>

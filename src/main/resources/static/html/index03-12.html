@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <script type="text/javascript">
+    function doAction(){
+      var text1 = document.getElementById("text1");
+      if(text1.value == ""){
+        document.getElementById("content").innerHTML = "未入力です。";
+      } else {
+        document.forms["form1"].submit();
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="content">サンプルページです。</p>
+  <form method="get" action="index03-12.html" id="form1" onsubmit="return false;">
+    <input type="text" id="text1" />
+    <input type="submit" onclick="doAction();" />
+  </form>
+</body>
+</html>

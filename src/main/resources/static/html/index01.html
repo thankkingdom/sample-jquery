@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index01</title>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="content">サンプルページです</p>
+  <select id="select1" size="5" multiple="multiple">
+    <option value="アジア">アジア</option>
+    <option value="アメリカ">アメリカ</option>
+    <option value="アフリカ">アフリカ</option>
+    <option value="ヨーロッパ">ヨーロッパ</option>
+    <option value="オセアニア">オセアニア</option>
+  </select>
+  <input type="button" onclick="doAction();" value="クリック！" />
+
+  <script type="text/javascript">
+    function doAction(){
+      var msg = "";
+      var sel1 = document.getElementById("select1");
+      var ops = sel1.options;
+      for(var i=0; i<ops.length; i++){
+        if(ops[i].selected){
+          msg += ops[i].value + " ";
+        }
+      }
+      document.getElementById("content").innerHTML = msg;
+    }
+  </script>
+</body>
+</html>
