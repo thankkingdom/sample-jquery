@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <style type="text/css">
+    .red { background-color: red; }
+  </style>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      $("p").toggleClass("red");
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="msg0" class="red">スタイルを操作する。</p>
+  <p id="msg1" class="">スタイルを操作する。</p>
+  <p id="msg2" class="red">スタイルを操作する。</p>
+  <p id="msg3" class="">スタイルを操作する。</p>
+  <br>
+  <input type="button" onclick="doAction()" value="クリック">
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      var res = "";
+      var val = $("#sel option:selected").each(function(){
+        res += $(this).val() + "<br>";
+      });
+      $("#msg").html(res);
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">サンプル</h1>
+  <p id="msg">ボタンをクリックしてくださいs。</p>
+  <br>
+  <select id="sel" multiple="multiple">
+    <option value="Windows">Windows</option>
+    <option value="Linux">Linux</option>
+    <option value="Mac OS X">Mac OS X</option>
+    <option value="Android">Android</option>
+    <option value="Chrome OS">Chrome OS</option>
+  </select><br>
+  <input type="button" onclick="doAction()" value="クリック">
+</body>
+</html>

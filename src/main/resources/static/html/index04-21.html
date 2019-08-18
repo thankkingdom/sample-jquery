@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      var msg = $("#input").val();
+      $("#input").val("");
+      if(msg == '') {
+        return;
+      }
+      var obj = $("<li>" + msg + "</li>");
+      //$("#outline").append(obj);
+      obj.appendTo($("#outline"));
+    }
+  </script>
+</head>
+<body>
+<ul id="outline"></ul><br>
+<input type="text" id="input" placeholder="メッセージを入力して下さい。s">
+<input type="button" onclick="doAction()" value="クリック">
+</body>
+</html>

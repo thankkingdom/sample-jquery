@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      var obj = $("<div>" + $("#input").val() + "</div>");
+      //if($("#before").attr("checked")){
+      if($("#before").prop("checked")){
+        $("#msg").before(obj);
+      }
+      //if($("#after").attr("checked")){
+      if($("#after").prop("checked")){
+        $("#msg").after(obj);
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="msg" class="msg">メッセージ</div>
+<br>
+<input type="text" id="input"><br>
+<input type="radio" name="add" id="before">前へ<br>
+<input type="radio" name="add" id="after">後ろへ<br>
+<input type="button" onclick="doAction()" value="クリック">
+</body>
+</html>

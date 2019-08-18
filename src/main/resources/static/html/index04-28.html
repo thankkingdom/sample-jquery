@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <style type="text/css">
+    #msg {
+      background-color: #ffaaaa;
+    }
+  </style>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    var timer = null;
+    function change(){
+      var n = $("#msg").data("count");
+      if(n == null){ n = 0; }
+      var data = $("#msg").data("info");
+      if(++n == data.length){ n = 0; }
+      $("#msg").text(data[n]);
+      $("#msg").data("count", n);
+    }
+    function doAction(){
+      var data = $("#msg").data("info");
+      if(data == null){
+        data = new Array();
+        timer = setInterval(change, 1000);
+      }
+      data.push($("#input").val());
+      $("#msg").data("info", data);
+    }
+  </script>
+</head>
+<body>
+  <div id="msg">メッセージ</div>
+  <br>
+  <input type="text" id="input"><br>
+  <input type="button" onclick="doAction()" value="クリック">
+</body>
+</html>

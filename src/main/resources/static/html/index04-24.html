@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル</title>
+  <style type="text/css">
+    .inner {
+      border-style: solid;
+      border-width: 5px;
+      border-color: #ffaaaa;
+      padding: 5px;
+    }
+  </style>
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+    function doAction(){
+      var obj = $("<div class='inner'></div>");
+      //$("#msg").wrap(obj);
+      $(".msg").wrap(obj);
+    }
+    function doAction2(){
+      var obj = $("<div class='inner'></div>");
+      $(".msg").wrapAll(obj);
+    }
+  </script>
+</head>
+<body>
+<div id="msg" class="msg">メッセージ</div>
+<div id="msg1" class="msg">メッセージ1</div>
+<div id="msg2" class="msg">メッセージ2</div>
+<br>
+<input type="button" onclick="doAction()" value="クリック - wrap">
+<input type="button" onclick="doAction2()" value="クリック - wrapAll">
+</body>
+</html>
